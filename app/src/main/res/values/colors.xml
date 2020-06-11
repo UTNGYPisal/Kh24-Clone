@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0076BE</color>
+    <color name="colorPrimaryDark">#015C91</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorAccent">#F48B13</color>
+    <color name="colorDefaultIcon">#CCCCCC</color>
+    <color name="colorLightBorder">#DEDEDE</color>
+    <color name="colorDarkText">#111111</color>
+    <color name="colorDanger">#FF0043</color>
+    <color name="colorLightBlackText">#555555</color>
+    <color name="colorLightGrayBg">#f7f7f7</color>
+    <color name="colorDarkerGrayBg">#E1E1E1</color>
+    <color name="colorTransparent">#00FFFFFF</color>
+    <color name="colorDefaultText">#777777</color>
+    <color name="colorFacebook">#3050A3</color>
+    <color name="colorFacebookDark">#103081</color>
+</resources>

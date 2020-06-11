@@ -1,0 +1,20 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="font_title">18sp</dimen>
+    <dimen name="large_spacing">16dp</dimen>
+    <dimen name="indicator_default_size">8dp</dimen>
+    <dimen name="half_spacing">4dp</dimen>
+    <dimen name="indicator_default_radius">4dp</dimen>
+    <dimen name="card_smallest_elevation">2dp</dimen>
+    <dimen name="category_icon_size">42dp</dimen>
+    <dimen name="general_icon_size">24dp</dimen>
+    <dimen name="medium_spacing">8dp</dimen>
+    <dimen name="default_thumbnail_size">120dp</dimen>
+    <dimen name="font_subtitle">12sp</dimen>
+    <dimen name="font_medium">16sp</dimen>
+    <dimen name="online_indicator_size">12dp</dimen>
+    <dimen name="standard_button_height">48dp</dimen>
+    <dimen name="min_safe_width">256dp</dimen>
+</resources>

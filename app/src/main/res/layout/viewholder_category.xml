@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/itemWrapper"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="@dimen/large_spacing"
+        >
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgCategory"
+            android:layout_width="@dimen/category_icon_size"
+            android:layout_height="@dimen/category_icon_size"
+            android:src="@drawable/image_3"
+            android:scaleType="centerCrop"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTitle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/large_spacing"
+            android:layout_marginEnd="@dimen/large_spacing"
+            style="@style/TextAppearance.AppCompat.Medium"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/general_icon_size"
+            android:layout_height="@dimen/general_icon_size"
+            android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+            android:tint="@color/colorDefaultIcon"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLightBorder"
+        android:layout_marginLeft="@dimen/large_spacing" />
+
+</LinearLayout>

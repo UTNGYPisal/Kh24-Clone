@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.learn.android.khmer24clone.ui.home.HomeFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_subCategoryFragment"
+            app:destination="@id/subCategoryFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_productListFragment"
+            app:destination="@id/productListFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_notification"
+        android:name="com.learn.android.khmer24clone.ui.notification.NotificationFragment"
+        android:label="@string/title_notification"
+        tools:layout="@layout/fragment_notification"/>
+
+    <fragment
+        android:id="@+id/navigation_post"
+        android:name="com.learn.android.khmer24clone.ui.post.PostFragment"
+        android:label="@string/title_post"
+        tools:layout="@layout/fragment_post"/>
+
+    <fragment
+        android:id="@+id/navigation_chat"
+        android:name="com.learn.android.khmer24clone.ui.chat.ChatFragment"
+        android:label="@string/title_chat"
+        tools:layout="@layout/fragment_chat"/>
+
+    <fragment
+        android:id="@+id/navigation_account"
+        android:name="com.learn.android.khmer24clone.ui.account.AccountFragment"
+        android:label="@string/title_my_account"
+        tools:layout="@layout/fragment_account"/>
+
+    <fragment
+        android:id="@+id/subCategoryFragment"
+        android:name="com.learn.android.khmer24clone.ui.category.sub.SubCategoryFragment"
+        android:label="@string/browse_by_category"
+        tools:layout="@layout/fragment_sub_category">
+        <action
+            android:id="@+id/action_subCategoryFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.learn.android.khmer24clone.ui.product.list.ProductListFragment"
+        android:label="@string/product" >
+        <action
+            android:id="@+id/action_productListFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.learn.android.khmer24clone.ui.product.detail.ProductDetailFragment"
+        android:label="ProductDetailFragment" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.learn.android.khmer24clone.ui.search.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search"/>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.learn.android.khmer24clone.ui.auth.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login"/>
+
+</navigation>

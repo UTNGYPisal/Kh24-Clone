@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Khmer24</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notification">Notification</string>
+    <string name="title_chat">Chat</string>
+    <string name="title_my_account">My Account</string>
+    <string name="title_post">Post</string>
+    <string name="search">Search</string>
+    <string name="browse_by_category">Browse by Category</string>
+    <string name="product">Products</string>
+    <string name="description">Description</string>
+    <string name="report">Report</string>
+    <string name="product_detail">Product Detail</string>
+    <string name="no_results">No results</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="login">Login</string>
+    <string name="login_with_facebook">Login with Facebook</string>
+    <string name="facebook_app_id">1595996350567845</string>
+    <string name="fb_login_protocol_scheme">fb1595996350567845</string>
+
+</resources>

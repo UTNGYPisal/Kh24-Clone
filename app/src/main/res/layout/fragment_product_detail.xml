@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".ui.home.HomeFragment"
+        android:orientation="vertical"
+        android:background="@color/colorLightGrayBg">
+
+        <!--    start header-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPagerSlide"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <com.learn.android.khmer24clone.custom.widget.SliderIndicator
+                android:id="@+id/indicatorView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/large_spacing"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/large_spacing">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_title"
+                android:textStyle="bold"
+                android:textColor="@color/colorDarkText"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="Title"
+                android:layout_marginBottom="@dimen/half_spacing"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phnom Penh"
+                    style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+                    android:textColor="@color/colorLightBlackText"
+                    android:textSize="@dimen/font_subtitle"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtTime"
+                    android:text="3 mins ago"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorLightBlackText"
+                    style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+                    android:layout_marginStart="@dimen/large_spacing"
+                    android:textSize="@dimen/font_subtitle"/>
+            </LinearLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$175"
+                style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+                android:textColor="@color/colorDanger"
+                android:textSize="@dimen/font_subtitle"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/medium_spacing"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/medium_spacing"
+            android:background="@color/colorDarkerGrayBg"/>
+        <!--    end header-->
+
+
+        <!--    start description-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/large_spacing"
+            android:paddingEnd="@dimen/large_spacing"
+            android:paddingTop="@dimen/medium_spacing">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_title"
+                android:textColor="@color/colorDarkText"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="@string/description"
+                android:layout_marginBottom="@dimen/half_spacing"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rclSpecs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtShortDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_medium"
+                android:textColor="@color/colorDarkText"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text=""
+                android:layout_marginBottom="@dimen/half_spacing"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorDarkerGrayBg"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/txtId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ID: xxx"/>
+
+                <TextView
+                    android:id="@+id/txtViewsCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/large_spacing"
+                    android:text="Views: 0"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="1dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnReport"
+                    style="@style/MaterialWhiteButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:text="@string/report"
+                    android:textColor="@color/colorDanger" />
+            </LinearLayout>
+        </LinearLayout>
+        <!--    end description-->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/medium_spacing"
+            android:background="@color/colorDarkerGrayBg"/>
+
+        <include layout="@layout/layout_owner_profile"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rclProducts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
