@@ -7,9 +7,13 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,6 +21,8 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
         window.setBackgroundDrawable(resources.getDrawable(R.color.colorWhite))
+
+        FirebaseApp.initializeApp(this)
 
         val navView: BottomNavigationView = findViewById(R.id.navView)
         val navController = findNavController(R.id.navHostFragment)
@@ -32,6 +38,12 @@ class MainActivity : AppCompatActivity() {
             ))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
 
+    override fun onStart() {
+        super.onStart()
+        auth = FirebaseAuth.getInstance()
+        val currentUser = auth.currentUser
+        //TODO:- implement
     }
 }

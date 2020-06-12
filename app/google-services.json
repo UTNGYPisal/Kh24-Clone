@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "394651147344",
+    "firebase_url": "https://kh24-clone.firebaseio.com",
+    "project_id": "kh24-clone",
+    "storage_bucket": "kh24-clone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394651147344:android:4468665fd416cdfa7a0555",
+        "android_client_info": {
+          "package_name": "com.learn.android.khmer24clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394651147344-0vnk5reoof7p8ttpqmsraoj4ahmeomqe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.learn.android.khmer24clone",
+            "certificate_hash": "4cce028f5159ff63a9908e2baff682bc5effbbcf"
+          }
+        },
+        {
+          "client_id": "394651147344-lsi04gdnb9u5esuf3kesvdvu1qto143o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfeUHBreE0UFmwMX3Z8GVaCuBSyoaey34"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394651147344-lsi04gdnb9u5esuf3kesvdvu1qto143o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
