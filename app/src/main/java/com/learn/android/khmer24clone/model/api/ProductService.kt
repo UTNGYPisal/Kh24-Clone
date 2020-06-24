@@ -26,4 +26,11 @@ interface ProductService {
         @Path("id") id: Int,
         @Body() body: HashMap<String, Any>
     ): BaseResponse<Product>
+
+
+    @WorkerThread
+    @POST(C.Endpoints.toggleFavorite)
+    suspend fun toggleFavorite(
+        @Body() body: HashMap<String, Any>
+    ): BaseResponse<Any>
 }

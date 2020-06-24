@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -37,11 +37,12 @@ android {
     productFlavors {
         dev {
             dimension "version"
-            applicationIdSuffix ".dev"
+            applicationIdSuffix ""
             buildConfigField("String", "DOMAIN_NAME", '"kh24.pisal.me"')
             buildConfigField("String", "BASE_URL", '"https://kh24.pisal.me"')
-            buildConfigField("String", "API_PATH", '"/api/v1/kh24/auth"')
+            buildConfigField("String", "API_PATH", '"/api/v1/kh24/authenticated"')
             buildConfigField("String", "UNAUTH_API_PATH", '"/api/v1/kh24"')
+            buildConfigField("String", "BASIC_API_PATH", '"/api/v1/kh24/basic"')
             buildConfigField("String", "CERT_HASH", '"sha256/mCAm1Z7d29Dlb3T47jxbjm3xAHCDMynSkz/M1griZEk="')
         }
     }
@@ -92,4 +93,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //Firebase
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+    implementation 'com.google.firebase:firebase-auth:19.3.1'
 }
+
+apply plugin: 'com.google.gms.google-services'

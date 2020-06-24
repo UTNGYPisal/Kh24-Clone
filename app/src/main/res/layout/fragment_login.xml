@@ -79,6 +79,7 @@
         android:visibility="gone"/>
 
     <RelativeLayout
+        android:id="@+id/layoutCustomButton"
         android:layout_width="@dimen/min_safe_width"
         android:layout_height="64dp"
         android:layout_below="@id/layoutLoginLabel"
@@ -106,6 +107,14 @@
             android:translationZ="10dp"/>
 
     </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:layout_below="@id/layoutCustomButton"/>
 
 
 </RelativeLayout>

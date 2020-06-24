@@ -1,6 +1,10 @@
 package com.learn.android.khmer24clone.model.entity
 
+import com.google.gson.Gson
 import com.google.gson.annotations.SerializedName
+import com.learn.android.khmer24clone.model.repo.SharedPrefRepo
+import java.io.Serializable
+import java.lang.Exception
 
 data class User(
 
@@ -38,5 +42,27 @@ data class User(
     val province: Province? = null,
 
     @field:SerializedName("location")
-    val location: String? = null
-)
+    val location: String? = null,
+
+    @field:SerializedName("token")
+    val token: String? = null
+
+): Serializable {
+
+    companion object {
+        var current: User? = null
+        get() {
+            return SharedPrefRepo.readObject("user.current")
+        }
+        set(value) {
+            field = value
+            SharedPrefRepo.saveObject(field, "user.current")
+        }
+
+
+        val isLoggedIn: Boolean
+        get() {
+            return current != null && !current?.token.isNullOrEmpty()
+        }
+    }
+}

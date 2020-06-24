@@ -15,6 +15,7 @@ import kotlinx.android.synthetic.main.viewholder_product_list.view.*
 class ProductAdapter: RecyclerView.Adapter<ProductAdapter.ProductListViewHolder>() {
 
     var itemClickListener: ItemClickListener?  = null
+    var favClickListener: ItemClickListener?  = null
 
     var dataList: ArrayList<Product> = arrayListOf()
     set(value) {
@@ -48,6 +49,9 @@ class ProductAdapter: RecyclerView.Adapter<ProductAdapter.ProductListViewHolder>
 
             itemView.setOnClickListener {
                 itemClickListener?.invoke(adapterPosition, data)
+            }
+            itemView.iBtnFav.setOnClickListener {
+                favClickListener?.invoke(adapterPosition, data)
             }
         }
     }

@@ -41,4 +41,16 @@ object ProductRepo {
             )
         }
     }
+
+    suspend fun toggleFavorite(
+        productId: Int
+    ): UnhandledResult<BaseResponse<Any>> {
+        return safeApiCall {
+            productService.toggleFavorite(
+                buildParams(
+                    "product_id" to productId
+                )
+            )
+        }
+    }
 }

@@ -18,4 +18,10 @@ class ProductListViewModel : BaseViewModel(){
         emit(response)
     }
 
+    fun toggleFavorite(productId: Int) = liveData {
+        emit(UnhandledResult.Loading)
+        val response = ProductRepo.toggleFavorite(productId)
+        emit(response)
+    }
+
 }

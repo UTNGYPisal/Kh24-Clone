@@ -1,5 +1,6 @@
 package com.learn.android.khmer24clone.di
 
+import com.learn.android.khmer24clone.model.api.AuthService
 import com.learn.android.khmer24clone.model.api.MetadataService
 import com.learn.android.khmer24clone.model.api.ProductService
 import org.koin.dsl.module
@@ -16,5 +17,8 @@ val retrofitModule = module {
     }
     single {
         ServiceFactory.provideService(get(), ProductService::class.java)
+    }
+    single {
+        ServiceFactory.provideService(get(), AuthService::class.java)
     }
 }

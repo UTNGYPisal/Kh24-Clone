@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.learn.android.khmer24clone.R
+import com.learn.android.khmer24clone.common.helper.printLog
 import com.learn.android.khmer24clone.custom.adapter.ProductAdapter
 import com.learn.android.khmer24clone.model.api.UnhandledResult
 import com.learn.android.khmer24clone.model.entity.Product
@@ -20,7 +21,10 @@ class ProductListFragment : BaseFragment(R.layout.fragment_product_list){
 
     private val viewModel by inject<ProductListViewModel>()
     private lateinit var productAdapter: ProductAdapter
-
+    
+    //**************************************************************
+    //region Lifecycle
+    //**************************************************************
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initUI()
@@ -37,7 +41,11 @@ class ProductListFragment : BaseFragment(R.layout.fragment_product_list){
             }
         }
     }
+    //endregion
 
+    //**************************************************************
+    //region Init
+    //**************************************************************
     private fun initUI(){
         productAdapter = ProductAdapter()
         rclProducts.layoutManager = LinearLayoutManager(requireContext())
@@ -50,6 +58,11 @@ class ProductListFragment : BaseFragment(R.layout.fragment_product_list){
                 product.value = data as Product
             }
             findNavController().navigate(R.id.action_productListFragment_to_productDetailFragment)
+        }
+
+        productAdapter.favClickListener = { position: Int, data: Any? ->
+            printLog("favClickListener")
+            postToggleFavorite(data as Product)
         }
     }
 
@@ -74,4 +87,24 @@ class ProductListFragment : BaseFragment(R.layout.fragment_product_list){
             }
         })
     }
+    //endregion
+
+    //**************************************************************
+    //region Operations
+    //**************************************************************
+    /**
+     * Save to favorite if not yet saved,
+     * Else, remove from favorite
+     */
+    private fun postToggleFavorite(product: Product) {
+        viewModel.toggleFavorite(product.id!!).observe(viewLifecycleOwner, Observer {
+            when (it) {
+                is UnhandledResult.Success -> {
+                    printLog("postToggleFavorite success")
+                }
+            }
+        })
+    }
+    //endregion
+
 }

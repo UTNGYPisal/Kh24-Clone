@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#0076BE</color>
+    <color name="colorHalfPrimary">#AA0076BE</color>
     <color name="colorPrimaryDark">#015C91</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorAccent">#F48B13</color>
@@ -15,4 +16,5 @@
     <color name="colorDefaultText">#777777</color>
     <color name="colorFacebook">#3050A3</color>
     <color name="colorFacebookDark">#103081</color>
+    <color name="colorHalfWhite">#AAFFFFFF</color>
 </resources>

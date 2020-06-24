@@ -1,5 +1,6 @@
 package com.learn.android.khmer24clone.di
 
+import com.learn.android.khmer24clone.MainViewModel
 import com.learn.android.khmer24clone.ui.auth.LoginViewModel
 import com.learn.android.khmer24clone.ui.category.sub.SubCategoryViewModel
 import com.learn.android.khmer24clone.ui.notification.NotificationViewModel
@@ -16,4 +17,5 @@ val viewModelModules = module {
     single { NotificationViewModel() }
 
     single { LoginViewModel() }
+    single { MainViewModel() }
 }

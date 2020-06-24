@@ -48,6 +48,7 @@ class BaseResponse<T: Any> {
     val code: Int = 0
     val message: String = ""
     val result: T? = null
+    val token: String? = null
 }
 //endregion
 

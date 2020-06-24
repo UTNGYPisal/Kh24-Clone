@@ -10,6 +10,10 @@ object C {
         const val searchProducts = BuildConfig.BASE_URL + BuildConfig.UNAUTH_API_PATH + "/search"
         const val getProductDetail = BuildConfig.BASE_URL + BuildConfig.UNAUTH_API_PATH + "/product-detail/{id}"
         const val getNotifications = BuildConfig.BASE_URL + BuildConfig.UNAUTH_API_PATH + "/notifications"
+
+        const val authenticate = BuildConfig.BASE_URL + BuildConfig.BASIC_API_PATH + "/authenticate"
+
+        const val toggleFavorite = BuildConfig.BASE_URL + BuildConfig.API_PATH + "/toggle-favorite"
     }
 
 
