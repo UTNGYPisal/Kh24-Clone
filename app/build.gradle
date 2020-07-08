@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.learn.android.khmer24clone"
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -97,6 +97,7 @@ dependencies {
     //Firebase
     implementation 'com.google.firebase:firebase-analytics:17.2.2'
     implementation 'com.google.firebase:firebase-auth:19.3.1'
+    implementation 'com.google.firebase:firebase-messaging:20.2.1'
 }
 
 apply plugin: 'com.google.gms.google-services'

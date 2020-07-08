@@ -14,6 +14,9 @@ object C {
         const val authenticate = BuildConfig.BASE_URL + BuildConfig.BASIC_API_PATH + "/authenticate"
 
         const val toggleFavorite = BuildConfig.BASE_URL + BuildConfig.API_PATH + "/toggle-favorite"
+        const val getFavorites = BuildConfig.BASE_URL + BuildConfig.API_PATH + "/favorites"
+        const val postProduct = BuildConfig.BASE_URL + BuildConfig.API_PATH + "/post-product"
+        const val uploadProductImage = BuildConfig.BASE_URL + BuildConfig.API_PATH + "/upload-product-image"
     }
 
 

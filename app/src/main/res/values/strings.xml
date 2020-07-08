@@ -18,5 +18,28 @@
     <string name="login_with_facebook">Login with Facebook</string>
     <string name="facebook_app_id">1595996350567845</string>
     <string name="fb_login_protocol_scheme">fb1595996350567845</string>
-
+    <string name="deeplink_product_detail_of">https://khmer24clone.android.learn.com/product/%d</string>
+    <string name="ads">Ads</string>
+    <string name="favorites">Favorites</string>
+    <string name="lbl_photos">Photos</string>
+    <string name="lbl_0_8">0/8</string>
+    <string name="lbl_detail">Details</string>
+    <string name="hint_title">Title</string>
+    <string name="hint_category">Category</string>
+    <string name="hint_description">Description</string>
+    <string name="lbl_contact">Contact</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_phone">Phone(s)</string>
+    <string name="hint_province">Province</string>
+    <string name="hint_address">Address</string>
+    <string name="btn_submit">Submit</string>
+    <string name="instruct_post_product_terms">By submitting, I agree to the Terms and Conditions of KH24</string>
+    <string name="btn_read_terms_and_conditions">Read Terms and Conditions</string>
+    <string name="hint_price">Price (USD)</string>
+    <string name="err_title_is_required">Title is required</string>
+    <string name="err_price_is_required">Price is required</string>
+    <string name="err_category_is_required">Category is required</string>
+    <string name="err_province_is_required">Province is required</string>
+    <string name="err_error">Error</string>
+    <string name="err_unexpected">Something went wrong!</string>
 </resources>

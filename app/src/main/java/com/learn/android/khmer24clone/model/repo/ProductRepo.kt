@@ -53,4 +53,37 @@ object ProductRepo {
             )
         }
     }
+
+    suspend fun getFavorites(): UnhandledResult<BaseResponse<ArrayList<Product>>> {
+        return safeApiCall {
+            productService.getFavorites(
+                buildParams()
+            )
+        }
+    }
+
+    /**
+     * @param images in form of "https://www.kh24.com/images/dlsfgkg.png,https://www.kh24.com/images/dlsfgkg.png"
+     */
+    suspend fun postProduct(
+        categoryId: Int,
+        provinceId: Int,
+        title: String,
+        price: Double,
+        shortDescription: String? = null,
+        images: String? = null
+    ): UnhandledResult<BaseResponse<Product>> {
+        return safeApiCall {
+            productService.postProduct(
+                buildParams(
+                    "category_id" to categoryId,
+                    "province_id" to provinceId,
+                    "title" to title,
+                    "price" to price,
+                    "short_description" to (shortDescription ?: ""),
+                    "images" to (images ?: "")
+                )
+            )
+        }
+    }
 }

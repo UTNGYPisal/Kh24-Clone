@@ -10,8 +10,8 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.learn.android.khmer24clone.R
+import com.learn.android.khmer24clone.common.extension.showKeyboard
 import com.learn.android.khmer24clone.common.helper.printLog
-import com.learn.android.khmer24clone.common.helper.showKeyboard
 import com.learn.android.khmer24clone.custom.adapter.ProductSearchAdapter
 import com.learn.android.khmer24clone.model.api.UnhandledResult
 import com.learn.android.khmer24clone.model.entity.Product
@@ -37,10 +37,9 @@ class SearchFragment : BaseFragment(R.layout.fragment_search) {
 
         requireActivity().run {
             toolbar.isGone = true
-            navView.isGone = true
+            bottomNavView.isGone = true
+            showKeyboard(etSearch)
         }
-
-        showKeyboard(etSearch)
     }
 
     private fun initListener(){

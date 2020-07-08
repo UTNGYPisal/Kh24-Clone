@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "394651147344-tgd3stdk4f3q2rbqdhhdtvjj5lstaebg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.learn.android.khmer24clone",
+            "certificate_hash": "0d4116c85a0edf9d07ac38d4c8b8becdcf89fea2"
+          }
+        },
+        {
           "client_id": "394651147344-0vnk5reoof7p8ttpqmsraoj4ahmeomqe.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

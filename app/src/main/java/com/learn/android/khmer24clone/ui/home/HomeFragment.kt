@@ -5,7 +5,6 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
-import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -43,7 +42,7 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
         requireActivity().run {
             toolbar.isVisible = true
             toolbar.title = getString(R.string.title_home)
-            navView.isVisible = true
+            bottomNavView.isVisible = true
         }
     }
 

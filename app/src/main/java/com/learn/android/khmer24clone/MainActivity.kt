@@ -1,6 +1,7 @@
 package com.learn.android.khmer24clone
 
 import android.os.Bundle
+import android.view.MotionEvent
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -8,8 +9,12 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.iid.FirebaseInstanceId
+import com.learn.android.khmer24clone.common.helper.hideSoftKeyboard
+import com.learn.android.khmer24clone.common.helper.printLog
 import com.learn.android.khmer24clone.model.api.UnhandledResult
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.inject
@@ -27,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         FirebaseApp.initializeApp(this)
 
-        val navView: BottomNavigationView = findViewById(R.id.navView)
+        val navView: BottomNavigationView = findViewById(R.id.bottomNavView)
         val navController = findNavController(R.id.navHostFragment)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -47,6 +52,20 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         auth = FirebaseAuth.getInstance()
         refreshToken()
+
+        FirebaseInstanceId.getInstance().instanceId
+            .addOnCompleteListener(OnCompleteListener { task ->
+                if (!task.isSuccessful) {
+                    printLog("getInstanceId failed ${task.exception}")
+                    return@OnCompleteListener
+                }
+
+                // Get new Instance ID token
+                val token = task.result?.token
+
+                // Log and toast
+                printLog("FCM Token: $token")
+            })
     }
 
     private fun refreshToken(){
@@ -65,5 +84,14 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        printLog("dispatchTouchEvent: $ev")
+        if (window.currentFocus != null) {
+            hideSoftKeyboard(this)
+        }
+
+        return super.dispatchTouchEvent(ev)
     }
 }

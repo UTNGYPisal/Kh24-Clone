@@ -2,6 +2,7 @@ package com.learn.android.khmer24clone.ui.product.list
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageButton
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -55,14 +56,13 @@ class ProductListFragment : BaseFragment(R.layout.fragment_product_list){
     private fun initListener(){
         productAdapter.itemClickListener = { position, data ->
             inject<ProductDetailViewModel>().value.apply {
-                product.value = data as Product
+                productId.value = (data as Product).id
             }
             findNavController().navigate(R.id.action_productListFragment_to_productDetailFragment)
         }
 
-        productAdapter.favClickListener = { position: Int, data: Any? ->
-            printLog("favClickListener")
-            postToggleFavorite(data as Product)
+        productAdapter.favClickListener = { _, product, imageButton ->
+            postToggleFavorite(product, imageButton )
         }
     }
 
@@ -96,11 +96,16 @@ class ProductListFragment : BaseFragment(R.layout.fragment_product_list){
      * Save to favorite if not yet saved,
      * Else, remove from favorite
      */
-    private fun postToggleFavorite(product: Product) {
-        viewModel.toggleFavorite(product.id!!).observe(viewLifecycleOwner, Observer {
+    private fun postToggleFavorite(product: Product, imageButton: ImageButton) {
+        mainViewModel.toggleFavorite(product.id!!).observe(viewLifecycleOwner, Observer {
             when (it) {
                 is UnhandledResult.Success -> {
                     printLog("postToggleFavorite success")
+                    imageButton.setColorFilter(
+                        resources.getColor(
+                            if (product.isFavorite == true) R.color.colorDefaultIcon else R.color.colorDanger,
+                            requireContext().theme)
+                    )
                 }
             }
         })

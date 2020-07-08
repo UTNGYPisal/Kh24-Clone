@@ -3,6 +3,7 @@ package com.learn.android.khmer24clone.custom.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import androidx.recyclerview.widget.RecyclerView
 import com.learn.android.khmer24clone.BuildConfig
 import com.learn.android.khmer24clone.GlideApp
@@ -15,7 +16,7 @@ import kotlinx.android.synthetic.main.viewholder_product_list.view.*
 class ProductAdapter: RecyclerView.Adapter<ProductAdapter.ProductListViewHolder>() {
 
     var itemClickListener: ItemClickListener?  = null
-    var favClickListener: ItemClickListener?  = null
+    var favClickListener: ((position: Int, product: Product, imageButton: ImageButton) -> Unit)? = null
 
     var dataList: ArrayList<Product> = arrayListOf()
     set(value) {
@@ -46,12 +47,18 @@ class ProductAdapter: RecyclerView.Adapter<ProductAdapter.ProductListViewHolder>
             itemView.txtLocation.text = data.province?.name ?: ""
             itemView.txtTime.text = data.createdAt?.readableRelativeDate ?: ""
             itemView.txtPrice.text = "USD ${data.price ?: 0.00}"
+            itemView.iBtnFav.setColorFilter(
+                itemView.resources.getColor(
+                    if (data.isFavorite == true) R.color.colorDanger else R.color.colorDefaultIcon,
+                    itemView.context.theme
+                )
+            )
 
             itemView.setOnClickListener {
                 itemClickListener?.invoke(adapterPosition, data)
             }
             itemView.iBtnFav.setOnClickListener {
-                favClickListener?.invoke(adapterPosition, data)
+                favClickListener?.invoke( adapterPosition, data, itemView.iBtnFav)
             }
         }
     }

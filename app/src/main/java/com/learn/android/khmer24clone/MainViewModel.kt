@@ -8,6 +8,7 @@ import com.learn.android.khmer24clone.model.api.BaseResponse
 import com.learn.android.khmer24clone.model.api.UnhandledResult
 import com.learn.android.khmer24clone.model.entity.User
 import com.learn.android.khmer24clone.model.repo.AuthRepo
+import com.learn.android.khmer24clone.model.repo.ProductRepo
 import com.learn.android.khmer24clone.ui.base.BaseViewModel
 
 class MainViewModel : BaseViewModel() {
@@ -33,4 +34,11 @@ class MainViewModel : BaseViewModel() {
         User.current = response.result!!.copy(token = response.token)
         isLoggedIn.value = true
     }
+
+    fun toggleFavorite(productId: Int) = liveData {
+        emit(UnhandledResult.Loading)
+        val response = ProductRepo.toggleFavorite(productId)
+        emit(response)
+    }
+
 }

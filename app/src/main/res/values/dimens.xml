@@ -17,4 +17,5 @@
     <dimen name="online_indicator_size">12dp</dimen>
     <dimen name="standard_button_height">48dp</dimen>
     <dimen name="min_safe_width">256dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
 </resources>

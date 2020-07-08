@@ -7,4 +7,11 @@
         <attr name="highlightEnable" format="boolean"/>
         <attr name="highlightColor" format="color"/>
     </declare-styleable>
+
+
+    <declare-styleable name="BlurLayout">
+        <attr name="downscaleFactor" format="float" />
+        <attr name="blurRadius" format="integer" />
+        <attr name="fps" format="integer" />
+    </declare-styleable>
 </resources>

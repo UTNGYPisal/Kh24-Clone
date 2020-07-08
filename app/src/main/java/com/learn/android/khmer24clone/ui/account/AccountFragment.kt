@@ -7,7 +7,7 @@ import android.view.MenuItem
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
-import com.google.firebase.auth.FirebaseAuth
+import com.google.android.material.tabs.TabLayoutMediator
 import com.learn.android.khmer24clone.GlideApp
 import com.learn.android.khmer24clone.R
 import com.learn.android.khmer24clone.custom.adapter.AccountPagerAdapter
@@ -32,7 +32,7 @@ class AccountFragment : BaseFragment(R.layout.fragment_account) {
 
         requireActivity().run {
             this.toolbar.isVisible = true
-            this.navView.isVisible = true
+            this.bottomNavView.isVisible = true
         }
     }
 
@@ -57,9 +57,12 @@ class AccountFragment : BaseFragment(R.layout.fragment_account) {
     //**************************************************************
     private fun initUI(){
         setHasOptionsMenu(true)
-        viewPagerAdapter = AccountPagerAdapter(childFragmentManager)
+        viewPagerAdapter = AccountPagerAdapter(requireActivity())
         viewPager.adapter = viewPagerAdapter
-        tabLayout.setupWithViewPager(viewPager)
+        val titles = arrayOf(getString(R.string.ads), getString(R.string.favorites))
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            tab.text = titles[position]
+        }.attach()
     }
 
     private fun initData(){

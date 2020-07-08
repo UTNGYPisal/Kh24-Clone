@@ -46,6 +46,7 @@ fun buildParams(vararg pairs: Pair<String, Any>): HashMap<String, Any> {
 
 class BaseResponse<T: Any> {
     val code: Int = 0
+    val success: Boolean = false
     val message: String = ""
     val result: T? = null
     val token: String? = null

@@ -1,7 +1,6 @@
 package com.learn.android.khmer24clone.ui.auth
 
 import android.content.Intent
-import android.database.sqlite.SQLiteOpenHelper
 import android.os.Bundle
 import android.view.View
 import androidx.core.view.isGone
@@ -36,7 +35,7 @@ class LoginFragment : BaseFragment(R.layout.fragment_login) {
         super.onResume()
 
         requireActivity().run {
-            navView.isGone = true
+            bottomNavView.isGone = true
             toolbar.isGone = true
         }
     }

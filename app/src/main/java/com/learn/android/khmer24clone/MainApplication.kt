@@ -6,6 +6,7 @@ import com.bumptech.glide.module.AppGlideModule
 import com.facebook.FacebookSdk
 import com.facebook.appevents.AppEventsLogger
 import com.google.firebase.FirebaseApp
+import com.google.firebase.messaging.FirebaseMessaging
 import com.learn.android.khmer24clone.di.retrofitModule
 import com.learn.android.khmer24clone.di.viewModelModules
 import org.koin.android.ext.koin.androidContext
@@ -17,6 +18,7 @@ class MainApplication : Application(){
         super.onCreate()
         instance = this
         FacebookSdk.sdkInitialize(applicationContext)
+        FirebaseMessaging.getInstance().subscribeToTopic("all")
         AppEventsLogger.activateApp(this)
 
         startKoin {

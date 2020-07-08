@@ -1,6 +1,7 @@
 import com.learn.android.khmer24clone.BuildConfig
 import com.learn.android.khmer24clone.common.C
 import com.learn.android.khmer24clone.common.helper.printLog
+import com.learn.android.khmer24clone.model.entity.User
 import okhttp3.CertificatePinner
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -31,11 +32,11 @@ object ServiceFactory {
                 chain.request().newBuilder().apply {
                     this.addHeader("Accept", "application/json")
                     printLog("Request Url: ${chain.request().url}")
-//                    if (User.isSignedIn) {
-//                        this.addHeader("Authorization", "Bearer ${User.current!!.token!!}")
-//                    } else {
-//                        this.addHeader("Authorization", "Basic ${Constants.Security.basicHttpToken}")
-//                    }
+                    if (User.isLoggedIn) {
+                        this.addHeader("Authorization", "Bearer ${User.current!!.token!!}")
+                    } else {
+                        //this.addHeader("Authorization", "Basic ${Constants.Security.basicHttpToken}")
+                    }
                 }.build()
             )
         }

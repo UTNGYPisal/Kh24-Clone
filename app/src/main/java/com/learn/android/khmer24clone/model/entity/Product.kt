@@ -40,6 +40,9 @@ data class Product(
 	@field:SerializedName("status")
 	val status: Int? = null,
 
+	@field:SerializedName("is_favorite")
+	var isFavorite: Boolean? = false,
+
 	val province: Province? = null,
 	val category: Category? = null,
 	val price: Double? = null,

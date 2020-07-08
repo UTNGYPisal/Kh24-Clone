@@ -64,8 +64,11 @@
     </fragment>
     <fragment
         android:id="@+id/productDetailFragment"
-        android:name="com.learn.android.khmer24clone.ui.product.detail.ProductDetailFragment"
-        android:label="ProductDetailFragment" />
+        android:name="com.learn.android.khmer24clone.ui.product.detail.ProductDetailFragment">
+
+        <deepLink app:uri="https://khmer24clone.android.learn.com/product/{id}" android:autoVerify="true"/>
+        <argument android:name="id" app:argType="integer"/>
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.learn.android.khmer24clone.ui.search.SearchFragment"
